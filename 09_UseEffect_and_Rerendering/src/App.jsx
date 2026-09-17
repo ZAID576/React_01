@@ -6,10 +6,10 @@ const App = () => {
   const [count, setCount] = useState(0)
   const [toggle, setToggle] = useState(false)
 
-  useEffect(() => {
-    console.log('useEffect called')
-    console.log("hey")
-  }, []) 
+  // useEffect(() => {
+  //   console.log('useEffect called')
+  //   console.log("hey")
+  // }, []) 
 
 
   return (
