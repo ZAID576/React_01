@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Navbar from './Components/Navbar'
 import ProductsCard from './Components/ProductsCard'
+import CartScreen from './pages/CartScreen'
 
 const App = () => {
   const [products, setProducts] = useState([])
+  const [isCartOpen, setisCartOpen] = useState(false)
 
   const getProductsData = async () => {
     try {
@@ -20,11 +22,23 @@ const App = () => {
   }, [])
 
   return (
-    <div className='h-screen'>
-      <Navbar />
+    <div className='h-screen p-2 flex flex-col gap-4'>
+      <Navbar setisCartOpen={setisCartOpen} />
+
+
+      {
+        isCartOpen ? 
+      <div className=''>  
+       <CartScreen />
+      </div>
+      :  
+      <div className='grid grid-cols-4 gap-4'>  
       {products.map((product) => (
         <ProductsCard key={product.id} product={product} />
       ))}
+      </div>
+      }  
+
     </div>
   )
 }
