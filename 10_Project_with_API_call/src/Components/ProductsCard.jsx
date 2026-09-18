@@ -1,4 +1,4 @@
-const ProductsCard = ({ product }) => {
+const ProductsCard = ({ product , setcartItem}) => {
   return (
     <div className="w-72 bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
       
@@ -46,7 +46,7 @@ const ProductsCard = ({ product }) => {
             ${product.price}
           </span>
 
-          <button className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition">
+          <button onClick={()=>{setcartItem((prev)=>[...prev, product])}} className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition">
             Add to Cart
           </button>
         </div>
