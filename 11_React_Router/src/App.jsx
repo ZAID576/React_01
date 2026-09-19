@@ -1,13 +1,11 @@
-import Home from './pages/Home';
-import Contact from './pages/contact';
-import About from './pages/About';
-import { NavLink, Route, Routes } from "react-router";
+import { NavLink} from "react-router";
+import AppRoutes from './routes/AppRoutes';
 
 const App = () => {
 
   return (
     <div className="h-screen p-2">
-      <nav className="flex items-center justify-between mb-4">
+      <nav className="flex items-center justify-between mb-4 bg-yellow-200 h-10 p-3">
         <h1>Logo</h1>
 
         <div className="flex items-center gap-6 justify-between">
@@ -19,11 +17,8 @@ const App = () => {
         <button>Login</button>
       </nav>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <AppRoutes />
+
     </div>
   );
 };
